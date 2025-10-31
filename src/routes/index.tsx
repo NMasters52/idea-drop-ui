@@ -18,7 +18,12 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   const { data: ideas } = useSuspenseQuery(ideasQueryOptions);
-  const filteredIdeas = ideas.slice(0, 3);
+  const latestIdeas = [...ideas]
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    )
+    .slice(0, 3);
 
   return (
     <div className="flex flex-col md:flex-row items-start justify-between gap-10 p-6 text-blue-600">
@@ -37,7 +42,7 @@ function HomePage() {
           Latest Ideas
         </h2>
         <div className="space-y-6">
-          {filteredIdeas.map((idea) => (
+          {latestIdeas.map((idea) => (
             <IdeaCard key={idea.id} idea={idea} button={false} />
           ))}
         </div>
