@@ -41,14 +41,6 @@ IdeaDrop is a modern full-stack idea-sharing platform that enables users to disc
 - **Error Handling** - 404 page and error boundaries
 - **Development Tools** - TanStack Router & Query devtools
 
-## Screenshots
-
-<!-- Add screenshots here -->
-
-![Homepage](./screenshots/home.png)
-![Ideas List](./screenshots/ideas.png)
-![Idea Detail](./screenshots/idea-detail.png)
-
 ## Prerequisites
 
 - Node.js 18+ and npm/pnpm
@@ -161,14 +153,6 @@ const { data, isLoading, error } = useQuery({
 ```bash
 npm run test
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Live Demo
-
-[Add your live demo link here]
 
 ## License
 
